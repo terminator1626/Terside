@@ -1,21 +1,54 @@
-<!DOCTYPE html>
-<html style="font-size: 16px;">
-
+<!doctype html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.form.io/formiojs/formio.full.min.css">
-  <script src="https://cdn.form.io/formiojs/formio.full.min.js"></script>
-</head>
+  <meta charset="utf-8">
+  <title>Form.io Viewer</title>
+  <script type="text/javascript">document.write('<base href="' + location.pathname.replace(/\/$/, '') + '/">');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link id="favicon" rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1976d2">
+  <style>
+    .formio-loader {
+      position: relative;
+      min-height: 60px;
+    }
 
+    .loader-wrapper {
+      z-index: 1000;
+      position:absolute;
+      top: 0px;
+      left: 0px;
+      bottom: 0px;
+      right: 0px;
+      background-color:rgba(0, 0, 0, 0.1);
+    }
+
+    .loader {
+      position:absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -30px;
+      margin-top: -30px;
+      z-index: 10000;
+      display: inline-block;
+      border: 6px solid #f3f3f3; /* Light grey */
+      border-top: 6px solid #3498db; /* Blue */
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+<link rel="stylesheet" href="styles.css"></head>
 <body>
-    <script type="text/javascript">
-  window.onload = function() {
-    Formio.createForm(document.getElementById('formio'), 'https://ocppvcranoflhaa.form.io/claim');
-  };
-</script>
-  <script src="https://cdn.form.io/formiojs/formio.embed.js?src=https://ocppvcranoflhaa.form.io/claim&libs=true"></script>
-  <div id="formio"></div>
-
-</body>
-
+  <div id="loader" class="loader-wrapper"><div class="loader"></div></div>
+  <app-root></app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+<script src="runtime.js" defer></script><script src="polyfills-es5.js" nomodule defer></script><script src="polyfills.js" defer></script><script src="scripts.js" defer></script><script src="vendor.js" defer></script><script src="main.js" defer></script></body>
 </html>
